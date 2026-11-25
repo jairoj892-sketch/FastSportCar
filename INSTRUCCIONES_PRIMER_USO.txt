@@ -1,0 +1,18 @@
+PRIMER USO EN WINDOWS 11 (Android Studio Rabbit 2 | 2026.2.2, JDK 25)
+
+1. Extrae la carpeta FastSportCar_Completo (no la abras desde dentro del ZIP).
+2. En Android Studio: File > Open y elige la carpeta FastSportCar_Completo
+   (la que contiene settings.gradle.kts).
+3. Configura el JDK de Gradle:
+   Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JDK
+   y elige el JDK 25 (el "jbr-25" incluido con Android Studio o uno instalado).
+   Si Gradle muestra un error de compilador Kotlin con JDK 25, elige JDK 21 o 17.
+4. Pulsa "Sync Project with Gradle Files". La primera vez descarga Gradle 9.1.0
+   y las dependencias; requiere Internet.
+5. Selecciona un emulador o un telefono y pulsa Run.
+
+IMPORTANTE
+- Ya NO se usa PREPARAR_GRADLE.bat: generaba Gradle 8.9, que no es compatible
+  con Android Gradle Plugin 9.0.1 ni con JDK 25.
+- No borres gradlew, gradlew.bat ni gradle/wrapper/gradle-wrapper.jar.
+- Si Android Studio pide instalar el SDK de Android 35, aceptalo.

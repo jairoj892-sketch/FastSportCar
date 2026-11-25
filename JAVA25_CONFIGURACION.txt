@@ -1,0 +1,14 @@
+CONFIGURACIÓN JAVA 25 — CORRECCIÓN
+
+Se eliminó el plugin org.jetbrains.kotlin.android del módulo app porque Android Gradle Plugin 9.0.1 incorpora Kotlin integrado. Mantener ambos plugins causaba el error:
+Cannot add extension with name 'kotlin', as there is an extension already registered with that name.
+
+Se conserva:
+- JDK 25 para ejecutar Gradle.
+- Gradle 9.1.0.
+- Android Gradle Plugin 9.0.1.
+- Compose Compiler Plugin 2.2.10.
+- KSP 2.2.10-2.0.2.
+- Bytecode JVM 17 para la aplicación.
+
+Abre esta carpeta en Android Studio y sincroniza Gradle.

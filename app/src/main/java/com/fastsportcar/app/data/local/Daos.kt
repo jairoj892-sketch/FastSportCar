@@ -1,0 +1,7 @@
+package com.fastsportcar.app.data.local
+import androidx.room.*
+import kotlinx.coroutines.flow.Flow
+@Dao interface AutoparteDao { @Query("SELECT * FROM autopartes ORDER BY nombre") fun todas():Flow<List<AutoparteEntity>>; @Insert suspend fun insertar(x:AutoparteEntity); @Update suspend fun actualizar(x:AutoparteEntity); @Query("DELETE FROM autopartes WHERE id=:id") suspend fun eliminar(id:Int) }
+@Dao interface ClienteDao { @Query("SELECT * FROM clientes ORDER BY nombre") fun todos():Flow<List<ClienteEntity>>; @Insert suspend fun insertar(x:ClienteEntity); @Update suspend fun actualizar(x:ClienteEntity); @Query("DELETE FROM clientes WHERE id=:id") suspend fun eliminar(id:Int) }
+@Dao interface VendedorDao { @Query("SELECT * FROM vendedores ORDER BY nombre") fun todos():Flow<List<VendedorEntity>>; @Insert suspend fun insertar(x:VendedorEntity); @Update suspend fun actualizar(x:VendedorEntity); @Query("DELETE FROM vendedores WHERE id=:id") suspend fun eliminar(id:Int) }
+@Dao interface VentaDao { @Query("SELECT * FROM ventas ORDER BY id DESC") fun todas():Flow<List<VentaEntity>>; @Insert suspend fun insertar(x:VentaEntity); @Update suspend fun actualizar(x:VentaEntity); @Query("DELETE FROM ventas WHERE id=:id") suspend fun eliminar(id:Int) }
